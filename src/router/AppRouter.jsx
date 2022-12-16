@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from '../components/Login';
 import Navbar from '../components/Navbar';
+import Home from '../pages/Home';
+import Auth from '../pages/Auth';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import BoardCreate from '../components/BoardCreate';
 
-function AppRouter() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+function AppRouter({ isLoggedIn }) {
   return (
-    <div>
-      <BrowserRouter>
-        <Navbar />
+    <BrowserRouter>
+      <Navbar />
+      {isLoggedIn && <Navigation />}
+
+      {isLoggedIn ? (
         <Routes>
-          <Route path="/login" element={<Login />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/board" element={<BoardCreate />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Auth />} />
+        </Routes>
+      )}
+      <Footer />
+    </BrowserRouter>
   );
 }
 

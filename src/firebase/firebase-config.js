@@ -11,7 +11,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // auth 설정 필수!!
 export const auth = getAuth(app);
