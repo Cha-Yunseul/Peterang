@@ -1,12 +1,30 @@
 //게시글 작성
 
 import { useState } from 'react';
+import { getAuth } from 'firebase/auth';
 
 function BoardCreate() {
   const [title, setTitle] = useState('');
   const [context, setContext] = useState('');
+  const [isPending, setIsPending] = useState(false);
 
-  const ListUp = (title, context) => {};
+  const user = getAuth();
+
+  const ListUp = (e) => {
+    // e.preventDefault();
+    const board = { user, title, context };
+
+    setIsPending(true);
+
+    fetch('http://localhost:3001/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(board),
+    }).then(() => {
+      console.log('new baord added');
+      setIsPending(false);
+    });
+  };
 
   return (
     <div className=" ">

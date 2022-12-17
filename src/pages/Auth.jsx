@@ -1,4 +1,4 @@
-import { auth, Signup } from '../firebase';
+import { auth } from '../firebase';
 import React, { useState } from 'react';
 import {
   signOut,
@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Auth = () => {
   const [signupEmail, setSignupEmail] = useState('');
@@ -17,6 +18,17 @@ const Auth = () => {
   const [loginUserData, setLoginUserData] = useState('');
 
   const [userData, setUserData] = useState(null);
+
+  //회원가입
+  const Signup = async (email, password) => {
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password);
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+      alert(error.message);
+    }
+  };
 
   //로그인
   const Login = async (email, password) => {

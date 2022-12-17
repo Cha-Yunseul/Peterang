@@ -1,0 +1,102 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2
+    },
+    {
+      "title": "hello",
+      "body": "world",
+      "id": 3
+    },
+    {
+      "title": "reh",
+      "context": "erh",
+      "id": 4
+    },
+    {
+      "title": "안녕하십니까",
+      "context": "저는 차윤슬입니다.",
+      "id": 5
+    },
+    {
+      "user": {
+        "apiKey": "AIzaSyBgahQtSdq6ej9SM3k9vok8JxUxi30pMa8",
+        "authDomain": "auth-test-web-1-9d25f.firebaseapp.com",
+        "appName": "[DEFAULT]",
+        "currentUser": {
+          "uid": "sTSBYRpUmDUwk47fujSRBLYLs4w1",
+          "email": "siddl333@naver.com",
+          "emailVerified": false,
+          "isAnonymous": false,
+          "providerData": [
+            {
+              "providerId": "password",
+              "uid": "siddl333@naver.com",
+              "displayName": null,
+              "email": "siddl333@naver.com",
+              "phoneNumber": null,
+              "photoURL": null
+            }
+          ],
+          "stsTokenManager": {
+            "refreshToken": "AOkPPWRaUR3jng5Zx-C9zQDrDPbfuOivLArcqvh9y40ucWYceW0b88SYh7oDiti9SvFQh8FlVS3jOpFlI-CMN9xP2MJM4-Ub0IAuVWjwS7zPU0GgV8gsyupzNiOro-038eTFUaG2RLC_7pHka_KhKHPkayFBUSMRo9rg5bP1o1-bMoMYJaSR5vyycP0NUf5YHXZGfwR0G6c2uw-KQW8vaKTUEEUxOOr5oKQ5tVehweFIKGNVOwWNRFU",
+            "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXV0aC10ZXN0LXdlYi0xLTlkMjVmIiwiYXVkIjoiYXV0aC10ZXN0LXdlYi0xLTlkMjVmIiwiYXV0aF90aW1lIjoxNjcxMTA4Mzk0LCJ1c2VyX2lkIjoic1RTQllScFVtRFV3azQ3ZnVqU1JCTFlMczR3MSIsInN1YiI6InNUU0JZUnBVbURVd2s0N2Z1alNSQkxZTHM0dzEiLCJpYXQiOjE2NzEyNDUxODksImV4cCI6MTY3MTI0ODc4OSwiZW1haWwiOiJzaWRkbDMzM0BuYXZlci5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsic2lkZGwzMzNAbmF2ZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.ZbIDD2F1Mn0Q5lkOKwkg8H92U2Cak_uE7EFpFn0NDgeq34sLwE7Ew_zG4qw32xwcQW7b5LzDXMr9y5PSrRLhe9NDXGEKN_E1_F-FIj6RE6YMApGbYTkY_jAIlGVo4iTHcLUkJqdIbfX-iuR8ZUgGLC4o9qNnTxFQxkGgb07bWK8uQ4Jo8LKwrJ1_qABCLhiGUo-HbZZiwMziLVaoVB3FIUpDm0gjJ96EAjg2ovMquiX00Pcjv3y_JPIeRkpZT1TFh2VgD8MXJ6c-0taBhYe3n7aExyEXYIzdJAlqW-TflV46h3M9-yGtes36K_j0_ZKdRKEjtb0-UOAzVf9NmKYrVQ",
+            "expirationTime": 1671248791491
+          },
+          "createdAt": "1670591080847",
+          "lastLoginAt": "1671108393987",
+          "apiKey": "AIzaSyBgahQtSdq6ej9SM3k9vok8JxUxi30pMa8",
+          "appName": "[DEFAULT]"
+        }
+      },
+      "title": "ㅈㄷㅎ",
+      "context": "ㅈㄷㅎ",
+      "id": 6
+    },
+    {
+      "user": {
+        "uid": "sTSBYRpUmDUwk47fujSRBLYLs4w1",
+        "email": "siddl333@naver.com",
+        "emailVerified": false,
+        "isAnonymous": false,
+        "providerData": [
+          {
+            "providerId": "password",
+            "uid": "siddl333@naver.com",
+            "displayName": null,
+            "email": "siddl333@naver.com",
+            "phoneNumber": null,
+            "photoURL": null
+          }
+        ],
+        "stsTokenManager": {
+          "refreshToken": "AOkPPWRaUR3jng5Zx-C9zQDrDPbfuOivLArcqvh9y40ucWYceW0b88SYh7oDiti9SvFQh8FlVS3jOpFlI-CMN9xP2MJM4-Ub0IAuVWjwS7zPU0GgV8gsyupzNiOro-038eTFUaG2RLC_7pHka_KhKHPkayFBUSMRo9rg5bP1o1-bMoMYJaSR5vyycP0NUf5YHXZGfwR0G6c2uw-KQW8vaKTUEEUxOOr5oKQ5tVehweFIKGNVOwWNRFU",
+          "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImFmZjFlNDJlNDE0M2I4MTQxM2VjMTI1MzQwOTcwODUxZThiNDdiM2YiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vYXV0aC10ZXN0LXdlYi0xLTlkMjVmIiwiYXVkIjoiYXV0aC10ZXN0LXdlYi0xLTlkMjVmIiwiYXV0aF90aW1lIjoxNjcxMTA4Mzk0LCJ1c2VyX2lkIjoic1RTQllScFVtRFV3azQ3ZnVqU1JCTFlMczR3MSIsInN1YiI6InNUU0JZUnBVbURVd2s0N2Z1alNSQkxZTHM0dzEiLCJpYXQiOjE2NzEyNDUxODksImV4cCI6MTY3MTI0ODc4OSwiZW1haWwiOiJzaWRkbDMzM0BuYXZlci5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsic2lkZGwzMzNAbmF2ZXIuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.ZbIDD2F1Mn0Q5lkOKwkg8H92U2Cak_uE7EFpFn0NDgeq34sLwE7Ew_zG4qw32xwcQW7b5LzDXMr9y5PSrRLhe9NDXGEKN_E1_F-FIj6RE6YMApGbYTkY_jAIlGVo4iTHcLUkJqdIbfX-iuR8ZUgGLC4o9qNnTxFQxkGgb07bWK8uQ4Jo8LKwrJ1_qABCLhiGUo-HbZZiwMziLVaoVB3FIUpDm0gjJ96EAjg2ovMquiX00Pcjv3y_JPIeRkpZT1TFh2VgD8MXJ6c-0taBhYe3n7aExyEXYIzdJAlqW-TflV46h3M9-yGtes36K_j0_ZKdRKEjtb0-UOAzVf9NmKYrVQ",
+          "expirationTime": 1671248791491
+        },
+        "createdAt": "1670591080847",
+        "lastLoginAt": "1671108393987",
+        "apiKey": "AIzaSyBgahQtSdq6ej9SM3k9vok8JxUxi30pMa8",
+        "appName": "[DEFAULT]"
+      },
+      "title": "가다다",
+      "context": "와다다",
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
