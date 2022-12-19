@@ -1,4 +1,4 @@
-import { auth } from '../firebase';
+import { auth } from '../firebase/firebase-config';
 import React, { useState } from 'react';
 import {
   signOut,
