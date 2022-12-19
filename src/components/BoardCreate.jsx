@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { getAuth } from 'firebase/auth';
+import Repository from '../firebase/repository';
 
-function BoardCreate() {
+function BoardCreate({ auth, repository }) {
   const [title, setTitle] = useState('');
   const [context, setContext] = useState('');
   const [isPending, setIsPending] = useState(false);
@@ -14,21 +15,14 @@ function BoardCreate() {
     // e.preventDefault();
     const board = { user, title, context };
 
-    setIsPending(true);
-
-    fetch('http://localhost:3001/posts', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(board),
-    }).then(() => {
-      console.log('new baord added');
-      setIsPending(false);
-    });
+    setTitle;
   };
 
   return (
     <div className=" ">
-      <div className="m-auto text-center relative   ">
+      <div className="m-auto text-center relative ">
+        <h1 className="m-2 font-bold">Board</h1>
+
         <div>
           <input
             className="border-2 text-center w-1/2 m-2"
@@ -52,6 +46,7 @@ function BoardCreate() {
           >
             등록
           </button>
+          <button className="border-2">취소</button>
         </div>
       </div>
     </div>
