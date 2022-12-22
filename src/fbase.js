@@ -1,6 +1,8 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getDatabase } from 'firebase/database';
+// import { getDatabase } from 'firebase/database';
+import firebase from 'firebase/compat/app';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBgahQtSdq6ej9SM3k9vok8JxUxi30pMa8',
@@ -16,5 +18,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // auth 설정 필수!!
-export const auth = getAuth(app);
-export const firebaseDB = getDatabase();
+export const firebaseInstance = firebase;
+export const authService = getAuth(app);
+export const dbService = getFirestore(app);

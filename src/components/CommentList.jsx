@@ -3,15 +3,18 @@ import { dbService } from '../fbase';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Pagination from './Pagination';
-import SearchBar from './SearchBar';
+import { useParams } from 'react-router';
 
-const BoardList = () => {
+const CommentList = () => {
   const [querySnapShot, setQuerySnapShot] = useState([]);
+
+  const params = useParams();
+  const id = params.data;
 
   useEffect(() => {
     (async () => {
       var rows = [];
-      const snap = await getDocs(collection(dbService, 'posts'));
+      const snap = await getDocs(collection(dbService, `posts/${id}/comments`));
       // setQuerySnapShot(snap);
       snap.forEach((doc) => {
         var childData = doc.data();
@@ -35,29 +38,26 @@ const BoardList = () => {
   };
 
   const content = currentPosts(querySnapShot).map((list) => {
-    const view_url = `/view/${list.id}`;
     return (
-      <Link to={view_url}>
-        <div key={list.id}>
-          <div className="grid grid-cols-3 border-solid border-b-2">
-            <div className="">{list.creatorId}</div>
-            <div className="divider divider-horizontal"></div>
-            <div className="">{list.title}</div>
-          </div>
+      <div key={list.id}>
+        <div className="grid grid-cols-3 border-solid border-b-2">
+          <div className="">{list.email}</div>
+          <div className="divider divider-horizontal"></div>
+          <div className="">{list.comments}</div>
         </div>
-      </Link>
+      </div>
     );
   });
 
   return (
     <>
-      <div className="w-9/12 ">
-        <p className="font-bold text-xl text-center ">목록</p>
+      <div className="w-full m-4">
+        <p className="font-bold text-xl text-center ">댓글</p>
         <div className="border-solid border-2 m-4">
           <div className="grid grid-cols-3 border-solid border-2 bg-gray-300">
             <div className="font-bold">작성자</div>
             <div className="divider divider-horizontal"></div>
-            <div className="font-bold">제목</div>
+            <div className="font-bold">내용</div>
           </div>
           <div>
             <div className="border-solid border-2">{content}</div>
@@ -71,17 +71,9 @@ const BoardList = () => {
             paginate={setCurrentPage}
           ></Pagination>
         </div>
-        <div className="m-4">
-          <div className="text-center w-3/4 inline-block">
-            <SearchBar />
-          </div>
-          <div className="border-4 w-1/4 m-0 text-center inline-block ">
-            <Link to="/create">글쓰기</Link>
-          </div>
-        </div>
       </div>
     </>
   );
 };
 
-export default BoardList;
+export default CommentList;

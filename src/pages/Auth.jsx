@@ -1,4 +1,4 @@
-import { auth } from '../firebase/firebase-config';
+import { authService } from '../fbase';
 import React, { useState } from 'react';
 import {
   signOut,
@@ -22,7 +22,11 @@ const Auth = () => {
   //회원가입
   const Signup = async (email, password) => {
     try {
-      const user = await createUserWithEmailAndPassword(auth, email, password);
+      const user = await createUserWithEmailAndPassword(
+        authService,
+        email,
+        password
+      );
       console.log(user);
     } catch (error) {
       console.log(error.message);
@@ -32,7 +36,7 @@ const Auth = () => {
 
   //로그인
   const Login = async (email, password) => {
-    await signInWithEmailAndPassword(auth, email, password)
+    await signInWithEmailAndPassword(authService, email, password)
       .then((data) => {
         setLoginUserData(data.user.email);
         console.log(loginUserData);
@@ -46,9 +50,9 @@ const Auth = () => {
 
   //로그아웃
   const Logout = async () => {
-    await signOut(auth).then(() => {
+    await signOut(authService).then(() => {
       setLoginUserData('');
-      console.log(auth);
+      console.log(authService);
       console.log('logged out');
     });
   };
@@ -56,11 +60,11 @@ const Auth = () => {
   //구글로그인
   const GoogleLogin = async () => {
     const provider = new GoogleAuthProvider(); // provider를 구글로 설정
-    await signInWithPopup(auth, provider) // popup을 이용한 signup
+    await signInWithPopup(authService, provider) // popup을 이용한 signup
       .then((data) => {
         setUserData(data.user); // user data 설정
         // console.log(data); // console로 들어온 데이터 표시
-        console.log(auth);
+        console.log(authService);
       })
       .catch((err) => {
         console.log(err);

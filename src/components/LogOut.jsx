@@ -1,19 +1,21 @@
 import React from 'react';
-import { signOut } from 'firebase/auth';
-import { auth } from '../firebase/firebase-config';
-import { useNavigate } from 'react-router';
+
+import { Logout } from '../pages/Auth';
 
 function LogOut() {
-  let navigate = useNavigate();
-
-  const onLogOutClick = () => {
-    signOut(auth);
-    navigate('/');
-  };
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
 
   return (
     <>
-      <button onClick={onLogOutClick}>Log Out</button>
+      <button
+        onClick={() => {
+          Logout(loginEmail, loginPassword);
+        }}
+      >
+        Login
+      </button>
+      ;
     </>
   );
 }

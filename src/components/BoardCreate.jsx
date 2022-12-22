@@ -1,56 +1,77 @@
-//게시글 작성
+import React, { useState, useEffect } from 'react';
+import { dbService, authService } from '../fbase';
+import { collection, onSnapshot, addDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router';
 
-import { useState } from 'react';
-import { getAuth } from 'firebase/auth';
-import Repository from '../firebase/repository';
+const BoardCreate = ({ userObj }) => {
+  const [posts, setPosts] = useState([]);
 
-function BoardCreate({ auth, repository }) {
   const [title, setTitle] = useState('');
-  const [context, setContext] = useState('');
-  const [isPending, setIsPending] = useState(false);
+  const [content, setContent] = useState('');
 
-  const user = getAuth();
+  const user = authService.currentUser;
+  const email = user.email;
 
-  const ListUp = (e) => {
-    // e.preventDefault();
-    const board = { user, title, context };
+  let navigate = useNavigate();
 
-    setTitle;
+  useEffect(() => {
+    onSnapshot(collection(dbService, 'posts')),
+      (snapshot) => {
+        const postArray = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setPosts(postArray);
+      };
+  }, []);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    await addDoc(collection(dbService, 'posts'), {
+      title: title,
+      content: content,
+      creatorId: email,
+      createdAt: Date.now(),
+    });
+    setTitle('');
+    setContent('');
+    navigate('/list');
+  };
+  const onChangeTitle = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setTitle(value);
   };
 
+  const onChangeContent = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setContent(value);
+  };
   return (
-    <div className=" ">
-      <div className="m-auto text-center relative ">
-        <h1 className="m-2 font-bold">Board</h1>
-
-        <div>
-          <input
-            className="border-2 text-center w-1/2 m-2"
-            placeholder="제목"
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            className="border-2 text-center w-1/2 h-96 m-2"
-            placeholder="내용"
-            onChange={(e) => setContext(e.target.value)}
-          />
-        </div>
-        <div>
-          <button
-            className="border-2"
-            onClick={() => {
-              ListUp(title, context);
-            }}
-          >
-            등록
-          </button>
-          <button className="border-2">취소</button>
-        </div>
-      </div>
+    <div className="flex">
+      <form onSubmit={onSubmit} className="context-center ">
+        <input
+          className="border-4 w-full"
+          value={title}
+          onChange={onChangeTitle}
+          type="text"
+          placeholder="제목을 입력하세요"
+          maxLength={120}
+        />
+        <input
+          className="border-4 w-full h-96"
+          value={content}
+          onChange={onChangeContent}
+          type="text"
+          placeholder="내용을 입력하세요"
+          maxLength={500}
+        />
+        <input className="border-4 w-1/4  " type="submit" value="제출" />
+      </form>
     </div>
   );
-}
-
+};
 export default BoardCreate;
