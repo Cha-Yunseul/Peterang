@@ -76,7 +76,7 @@ const Auth = () => {
     <div className="flex justify-center m-10 ">
       <div className="border-4 w-max h-96 leading-10">
         <div className="text-center m-4">
-          <h1 className="text-xl">Sign Up</h1>
+          <h1 className="text-xl font-bold">회원가입</h1>
           <input
             placeholder="Email"
             onChange={(e) => setSignupEmail(e.target.value)}
@@ -95,7 +95,7 @@ const Auth = () => {
           </button>
         </div>
         <div className="text-center m-4">
-          <h1 className="text-xl">Login</h1>
+          <h1 className="text-xl font-bold">로그인</h1>
           <input
             placeholder="Email"
             onChange={(e) => setLoginEmail(e.target.value)}
@@ -110,7 +110,7 @@ const Auth = () => {
               Login(loginEmail, loginPassword);
             }}
           >
-            Login
+            Log in
           </button>
         </div>
         <div className="m-4">
