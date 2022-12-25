@@ -14,12 +14,12 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="grid grid-cols-4 w-full h-full mt-4">
+      <div className="grid grid-cols-5 w-full h-full mt-4">
         <div className="col-span-1 flex-grow card place-items-center">
           {isLoggedIn && <Navigation />}
         </div>
         {/* <div className="divider divider-horizontal"></div> */}
-        <div className="col-span-3 flex-grow card place-items-center">
+        <div className="col-span-4 flex-grow card place-items-center">
           <Routes>
             {isLoggedIn ? (
               <>

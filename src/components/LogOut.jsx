@@ -1,30 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { authService } from '../fbase';
-import { signOut } from 'firebase/auth';
+// import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router';
 
 function LogOut() {
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
+  const navigate = useNavigate();
+  const onLogOutClick = () => {
+    authService.signOut();
+    console.log(authService);
+    console.log('logged out');
 
-  const [loginUserData, setLoginUserData] = useState('');
-
-  const Logout = async () => {
-    await signOut(authService).then(() => {
-      setLoginUserData('');
-      console.log(authService);
-      console.log('logged out');
-    });
+    navigate('/');
   };
 
   return (
     <>
-      <button
-        onClick={() => {
-          Logout(loginEmail, loginPassword);
-        }}
-      >
-        Log Out
-      </button>
+      <button onClick={onLogOutClick}>Log Out</button>
     </>
   );
 }

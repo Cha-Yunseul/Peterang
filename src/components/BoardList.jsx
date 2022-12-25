@@ -37,8 +37,8 @@ const BoardList = () => {
   const content = currentPosts(querySnapShot).map((list) => {
     const view_url = `/view/${list.id}`;
     return (
-      <Link to={view_url}>
-        <div key={list.id}>
+      <Link to={view_url} key={list.id}>
+        <div>
           <div className="grid grid-cols-3 border-solid border-b-2">
             <div className="">{list.creatorId}</div>
             <div className="divider divider-horizontal"></div>
@@ -51,7 +51,7 @@ const BoardList = () => {
 
   return (
     <>
-      <div className="w-9/12 ">
+      <div className="w-full">
         <p className="font-bold text-xl text-center ">목록</p>
         <div className="border-solid border-2 m-4">
           <div className="grid grid-cols-3 border-solid border-2 bg-gray-300">
